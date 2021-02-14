@@ -82,6 +82,7 @@ const createSlider = () => {
         sliders.forEach(slide => {
             let item = document.createElement('div')
             item.className = "slider-item";
+            // adding backButton
             item.innerHTML = `<div class="mb-3"><button class="btn btn-danger"><a href="index.html">Back</a></button></div>
              <img class="w-100"
             src="${slide}"
