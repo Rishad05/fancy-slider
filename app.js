@@ -4,6 +4,7 @@ const galleryHeader = document.querySelector('.gallery-header');
 const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
+const search = document.getElementById('search');
 // selected image 
 let sliders = [];
 
@@ -29,7 +30,7 @@ const showImages = (images) => {
     images.forEach(image => {
         let div = document.createElement('div');
         div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
-        div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
+        div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}"> <button class="btn btn-danger btn-sm ml-4">${image.tags}`;
         gallery.appendChild(div)
     })
     toggleSpinner();
@@ -81,9 +82,10 @@ const createSlider = () => {
         sliders.forEach(slide => {
             let item = document.createElement('div')
             item.className = "slider-item";
-            item.innerHTML = `<img class="w-100"
-  src="${slide}"
-  alt="">`;
+            item.innerHTML = `<div class="mb-3"><button class="btn btn-danger"><a href="index.html">Back</a></button></div>
+             <img class="w-100"
+            src="${slide}"
+             alt="">`;
             sliderContainer.appendChild(item)
         })
     }
