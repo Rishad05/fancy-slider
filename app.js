@@ -30,7 +30,7 @@ const showImages = (images) => {
     images.forEach(image => {
         let div = document.createElement('div');
         div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
-        div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}"> <button class="btn btn-danger m-auto btn-sm ml-4">${image.tags}`;
+        div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}"> <button class="btn btn-danger btn-sm ml-4"><i class="fas fa-thumbs-up text-white mx-1"></i>${image.likes}</button>`;
         gallery.appendChild(div)
     })
     toggleSpinner();
